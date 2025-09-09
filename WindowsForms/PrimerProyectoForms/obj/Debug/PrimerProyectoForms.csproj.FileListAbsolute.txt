@@ -1,0 +1,17 @@
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\PrimerProyectoForms.exe.config
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\PrimerProyectoForms.exe
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\PrimerProyectoForms.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.csproj.AssemblyReference.cache
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.Properties.Resources.resources
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.csproj.GenerateResource.cache
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.csproj.CoreCompileInputs.cache
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.exe
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.exe.config
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.Index.resources
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\Dominio.dll
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\Negocio.dll
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\Dominio.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\bin\Debug\Negocio.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerPr.9DFF5D22.Up2Date
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.NuevoProducto.resources

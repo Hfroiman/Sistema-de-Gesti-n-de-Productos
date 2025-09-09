@@ -1,0 +1,9 @@
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\bin\Debug\Negocio.dll
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\bin\Debug\Negocio.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\bin\Debug\Dominio.dll
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\bin\Debug\Dominio.pdb
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\obj\Debug\Negocio.dll
+C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Negocio\obj\Debug\Negocio.pdb

@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|c:\\users\\hfroi\\onedrive\\documentos\\practicac#\\windowsforms\\primerproyectoforms\\nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|c:\\users\\hfroi\\onedrive\\documentos\\practicac#\\windowsforms\\primerproyectoforms\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|c:\\users\\hfroi\\onedrive\\documentos\\practicac#\\windowsforms\\primerproyectoforms\\nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NuevoProducto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs",
+              "RelativeDocumentMoniker": "NuevoProducto.cs",
+              "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NuevoProducto.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T22:37:25.284Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NuevoProducto.cs",
+              "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs",
+              "RelativeDocumentMoniker": "NuevoProducto.cs",
+              "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs",
+              "RelativeToolTip": "NuevoProducto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T20:34:43.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\Index.cs",
+              "RelativeDocumentMoniker": "Index.cs",
+              "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\PracticaC#\\WindowsForms\\PrimerProyectoForms\\Index.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Index.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T18:07:46.043Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
