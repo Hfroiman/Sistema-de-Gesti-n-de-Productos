@@ -204,5 +204,41 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
+        public int Modificar(Productos pr, Productos seleccionado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE Productos SET Codigo=@NCODIGO, IMG=@NIMG, Nombre=@NNOMBRE, Id_Color=@NIDCOLOR, Id_Talle=@NIDTALLE, Id_Marca=@NIDMARCA, Id_Tipo=@NIDTIPO, Cantidad=@NCANTIDAD, Precio=@NPRECIO WHERE Codigo=@CODIGO AND Id_Color=@IDCOLOR AND Id_Marca=@IDMARCA AND Id_Talle=@IDTALLE  AND Id_Tipo=@IDTIPO");
+                datos.SetearParametro("@NCODIGO", pr.Codigo);
+                datos.SetearParametro("@NIMG", pr.IMG);
+                datos.SetearParametro("@NNombre", pr.Nombre);
+                datos.SetearParametro("@NIDCOLOR", pr.Colores.Id);
+                datos.SetearParametro("@NIDTALLE", pr.Talles.Id);
+                datos.SetearParametro("@NIDMARCA", pr.Marcas.Id);
+                datos.SetearParametro("@NIDTIPO", pr.Tipo_Productos.Id);
+                datos.SetearParametro("@NCANTIDAD", pr.Cantidad);
+                datos.SetearParametro("@NPRECIO", pr.Precio);
+
+                datos.SetearParametro("@CODIGO", seleccionado.Codigo);
+                datos.SetearParametro("@IDCOLOR", seleccionado.Colores.Id);
+                datos.SetearParametro("@IDMARCA", seleccionado.Marcas.Id);
+                datos.SetearParametro("@IDTALLE", seleccionado.Talles.Id);
+                datos.SetearParametro("@IDTIPO", seleccionado.Tipo_Productos.Id);
+
+                datos.EjecutarAccion();
+                return 1;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
