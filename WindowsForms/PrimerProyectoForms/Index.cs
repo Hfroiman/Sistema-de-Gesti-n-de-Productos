@@ -126,8 +126,9 @@ namespace PrimerProyectoForms
             {
                 pbxImg.Load(iMG);
             }
-            catch {
-                pbxImg.Load("htt");
+            catch
+            {
+                pbxImg.Load("https://developer.android.com/static/codelabs/basic-android-kotlin-compose-load-images/img/70e008c63a2a1139.png?hl=es-419");
             }
         }
 
@@ -177,6 +178,7 @@ namespace PrimerProyectoForms
             seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
 
             NuevoProducto modificar = new NuevoProducto(seleccionado);
+            modificar.FormClosed += (s, args) => cargardgv();
             modificar.ShowDialog();
         }
     }
