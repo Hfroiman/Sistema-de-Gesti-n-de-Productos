@@ -133,17 +133,17 @@
             // 
             // btnAgregarNuevoProducto
             // 
-            this.btnAgregarNuevoProducto.Location = new System.Drawing.Point(120, 520);
+            this.btnAgregarNuevoProducto.Location = new System.Drawing.Point(7, 520);
             this.btnAgregarNuevoProducto.Name = "btnAgregarNuevoProducto";
-            this.btnAgregarNuevoProducto.Size = new System.Drawing.Size(141, 25);
+            this.btnAgregarNuevoProducto.Size = new System.Drawing.Size(215, 25);
             this.btnAgregarNuevoProducto.TabIndex = 19;
-            this.btnAgregarNuevoProducto.Text = "AGREGAR PRODUCTO";
+            this.btnAgregarNuevoProducto.Text = "AGREGAR NUEVO PRODUCTO";
             this.btnAgregarNuevoProducto.UseVisualStyleBackColor = true;
             this.btnAgregarNuevoProducto.Click += new System.EventHandler(this.btnAgregarNuevoProducto_Click);
             // 
             // btnIrAVentas
             // 
-            this.btnIrAVentas.Location = new System.Drawing.Point(267, 520);
+            this.btnIrAVentas.Location = new System.Drawing.Point(341, 520);
             this.btnIrAVentas.Name = "btnIrAVentas";
             this.btnIrAVentas.Size = new System.Drawing.Size(66, 25);
             this.btnIrAVentas.TabIndex = 21;
@@ -171,7 +171,7 @@
             // 
             // btnIrCarrito
             // 
-            this.btnIrCarrito.Location = new System.Drawing.Point(7, 520);
+            this.btnIrCarrito.Location = new System.Drawing.Point(228, 520);
             this.btnIrCarrito.Name = "btnIrCarrito";
             this.btnIrCarrito.Size = new System.Drawing.Size(107, 25);
             this.btnIrCarrito.TabIndex = 25;

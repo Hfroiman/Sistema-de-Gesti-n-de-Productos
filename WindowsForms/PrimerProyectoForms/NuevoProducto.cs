@@ -42,15 +42,6 @@ namespace PrimerProyectoForms
             try
             {
                 Negocios obj = new Negocios();
-                if (this.producto != null)
-                {
-                    txtCodigo.Text = this.producto.Codigo;
-                    txtNombre.Text = this.producto.Nombre;
-                    txtIMG.Text = this.producto.IMG.ToString();
-                    txtPrecio.Text = this.producto.Precio.ToString();
-                    txtCantidad.Text = this.producto.Cantidad.ToString();
-
-                }
                 listaColores = obj.listaColores();
                 listaMarcas = obj.listaMarcas();
                 listaTalle = obj.listaTalles();
@@ -72,10 +63,19 @@ namespace PrimerProyectoForms
                 cbxCategoria.DisplayMember = "nombre";
                 cbxCategoria.ValueMember = "Id";
 
-                cbxColor.SelectedValue = this.producto.Colores.Id;
-                cbxmarca.SelectedValue = this.producto.Marcas.Id;
-                cbxTalle.SelectedValue = this.producto.Talles.Id;
-                cbxCategoria.SelectedValue = this.producto.Tipo_Productos.Id;
+                if (this.producto != null)
+                {
+                    txtCodigo.Text = this.producto.Codigo;
+                    txtNombre.Text = this.producto.Nombre;
+                    txtIMG.Text = this.producto.IMG.ToString();
+                    txtPrecio.Text = this.producto.Precio.ToString();
+                    txtCantidad.Text = this.producto.Cantidad.ToString();
+
+                    cbxColor.SelectedValue = this.producto.Colores.Id;
+                    cbxmarca.SelectedValue = this.producto.Marcas.Id;
+                    cbxTalle.SelectedValue = this.producto.Talles.Id;
+                    cbxCategoria.SelectedValue = this.producto.Tipo_Productos.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -126,6 +126,7 @@ namespace PrimerProyectoForms
                     {
                         if (Confirmar()) negocio.Agregar(pr);
                             BorrarDatos();
+                        this.Close();
                     }
                 }
             }
@@ -145,7 +146,7 @@ namespace PrimerProyectoForms
                     txtNombre.Focus();
                     return false;
                 }
-                if (!int.TryParse(txtCodigo.Text, out int cantidad))
+                if (string.IsNullOrWhiteSpace(txtCodigo.Text))
                 {
                     MessageBox.Show("El codigo debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCantidad.Focus();
@@ -157,7 +158,7 @@ namespace PrimerProyectoForms
                     txtNombre.Focus();
                     return false;
                 }
-                if (!int.TryParse(txtCantidad.Text, out cantidad))
+                if (!int.TryParse(txtCantidad.Text, out int cantidad))
                 {
                     MessageBox.Show("La cantidad debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCantidad.Focus();

@@ -3,7 +3,6 @@ GO
 USE ControlStock;
 GO
 
-
 CREATE TABLE Colores(
     ID_Color SMALLINT PRIMARY KEY IDENTITY (1,1),
     Nombre VARCHAR(15) NOT NULL UNIQUE
@@ -45,25 +44,6 @@ CREATE table Productos(
     CONSTRAINT FK_Productos_Tipo FOREIGN KEY (Id_Tipo) REFERENCES Tipo_Producto(ID_Tipo)
 )
 
-SELECT  pr.Codigo, pr.Nombre as Nombre, SUM(pr.Cantidad), Precio, col.Nombre as Color, t.Nombre as Talle, m.Nombre as Marca, tp.Nombre as  Categoria FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo
-where pr.Codigo = '10001'
-
-SELECT DISTINCT col.Nombre as Color FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color where pr.Codigo=10001
-
-SELECT DISTINCT t.Nombre as Talle FROM Productos pr INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle where pr.Codigo=10001 
-
-INSERT INTO Productos (Codigo, IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio) 
-VALUES 
-('10001','https://images.puma.net/images/525899/01/mod01/fnd/ARG/w/600/h/600/fmt/png/bg/%23FAFAFA','Calzas Essentials',1,1,1,1,1,69999),
-('10001','https://images.puma.net/images/525899/01/mod01/fnd/ARG/w/600/h/600/fmt/png/bg/%23FAFAFA','Calzas Essentials',1,2,1,1,1,69999),
-('10001','https://images.puma.net/images/525899/01/mod01/fnd/ARG/w/600/h/600/fmt/png/bg/%23FAFAFA','Calzas Essentials',1,3,1,1,6,69999),
-('10001','https://images.puma.net/images/525899/01/mod01/fnd/ARG/w/600/h/600/fmt/png/bg/%23FAFAFA','Calzas Essentials',1,4,1,1,2,69999),
-('10001','https://images.puma.net/images/525899/01/mod01/fnd/ARG/w/600/h/600/fmt/png/bg/%23FAFAFA','Calzas Essentials',1,5,1,1,3,69999),
-('10003','https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0adc2346acba46a3856aa43d6fdbfb14_9366/Calzas_Algodon_Essentials_Linear_Gris_JD3151_21_model.jpg','Calzas Linear',2,1,3,1,5,72000),
-('10003','https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0adc2346acba46a3856aa43d6fdbfb14_9366/Calzas_Algodon_Essentials_Linear_Gris_JD3151_21_model.jpg','Calzas Linear',2,2,3,1,5,72000),
-('10003','https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0adc2346acba46a3856aa43d6fdbfb14_9366/Calzas_Algodon_Essentials_Linear_Gris_JD3151_21_model.jpg','Calzas Linear',2,3,3,1,5,72000),
-('10003','https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0adc2346acba46a3856aa43d6fdbfb14_9366/Calzas_Algodon_Essentials_Linear_Gris_JD3151_21_model.jpg','Calzas Linear',2,4,3,1,5,72000)
-
 SELECT Id_Color, Nombre from Colores
 SELECT Id_talle, Nombre from Talles 
 SELECT Id_Marca, Nombre from Marcas 
@@ -86,5 +66,21 @@ CREATE TABLE DetalleVenta (
 );
 
 
+/*
+CREATE TRIGGER TR_Nuevo_Producto
+ON Productos
+INSTEAD OF INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-SELECT pr.Codigo from DetalleVenta dv inner join Productos pr on dv.Codigo_Producto=pr.Codigo
+    INSERT INTO Productos(Codigo, IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio)
+    SELECT CAST(Codigo AS VARCHAR) 
+        + CAST(Id_Color AS VARCHAR) 
+        + CAST(Id_Talle AS VARCHAR) 
+        + CAST(Id_Marca AS VARCHAR) 
+        + CAST(Id_Tipo AS VARCHAR),
+        IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio 
+    FROM inserted;
+
+END;*/
