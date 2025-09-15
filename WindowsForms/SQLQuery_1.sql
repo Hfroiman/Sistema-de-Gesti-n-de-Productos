@@ -37,6 +37,7 @@ CREATE table Productos(
     Id_Tipo SMALLINT NOT NULL,
     Cantidad SMALLINT NOT NULL,
     Precio DECIMAL(10,2) NOT NULL,
+    Estado BIT,
     CONSTRAINT PK_Productos PRIMARY KEY (Codigo, Id_Color ,Id_Marca, Id_Talle, Id_Tipo),
     CONSTRAINT FK_Productos_Colores FOREIGN KEY (Id_Color) REFERENCES Colores(ID_Color),
     CONSTRAINT FK_Productos_Talles FOREIGN KEY (Id_Talle) REFERENCES Talles(ID_Talle),
@@ -44,16 +45,14 @@ CREATE table Productos(
     CONSTRAINT FK_Productos_Tipo FOREIGN KEY (Id_Tipo) REFERENCES Tipo_Producto(ID_Tipo)
 )
 
-SELECT Id_Color, Nombre from Colores
-SELECT Id_talle, Nombre from Talles 
-SELECT Id_Marca, Nombre from Marcas 
-SELECT Id_Tipo, Nombre from Tipo_Producto
+SELECT * FROM Productos
 
 CREATE TABLE Ventas(
     ID_Venta SMALLINT PRIMARY KEY IDENTITY (1,2),
     Fecha DATE NOT NULL,
     Total_Productos SMALLINT NOT NULL,
-    Total DECIMAL(10,2) NOT NULL
+    Total DECIMAL(10,2) NOT NULL,
+    Estado BIT NOT NULL
 );
 
 CREATE TABLE DetalleVenta (
@@ -65,6 +64,10 @@ CREATE TABLE DetalleVenta (
     CONSTRAINT FK_DetalleVenta_Ventas FOREIGN KEY (ID_Venta) REFERENCES Ventas(ID_Venta),
 );
 
+MODIFY TABLE Productos
+ADD Estado BIT NOT NULL
+
+UPDATE Productos SET Estado=0
 
 /*
 CREATE TRIGGER TR_Nuevo_Producto

@@ -181,5 +181,26 @@ namespace PrimerProyectoForms
             modificar.FormClosed += (s, args) => cargardgv();
             modificar.ShowDialog();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Negocios neg = new Negocios();
+            Productos seleccionado = new Productos();
+            seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
+            if (Confirmar()) neg.BajaLogica(seleccionado);
+            cargardgv();
+
+        }
+        private bool Confirmar()
+        {
+            string msj = "¿Estas seguro de eliminar el producto?";
+            DialogResult confirmacion = MessageBox.Show(
+            msj,
+            "Confirmar",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+            if (confirmacion == DialogResult.Yes) return true;
+            return false;
+        }
     }
 }

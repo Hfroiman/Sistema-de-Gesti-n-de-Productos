@@ -17,7 +17,7 @@ namespace Negocio
             AccesoDatos acceso = new AccesoDatos();
             try
             {
-                acceso.SetearConsulta("SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo\r\n");
+                acceso.SetearConsulta("SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo where pr.Estado=0");
                 acceso.EjecutarLectura();
                 while (acceso.Lector.Read())
                 {
@@ -180,7 +180,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("INSERT INTO Productos (Codigo, IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio) VALUES (@Codigo, @IMG,@Nombre, @Id_Color, @Id_Talle, @Id_Marca, @Id_Tipo, @Cantidad, @Precio)");
+                datos.SetearConsulta("INSERT INTO Productos (Codigo, IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio, Estado) VALUES (@Codigo, @IMG,@Nombre, @Id_Color, @Id_Talle, @Id_Marca, @Id_Tipo, @Cantidad, @Precio, 0)");
                 datos.SetearParametro("@Codigo", pr.Codigo);
                 datos.SetearParametro("@IMG", pr.IMG);
                 datos.SetearParametro("@Nombre", pr.Nombre);
@@ -226,6 +226,28 @@ namespace Negocio
                 datos.SetearParametro("@IDMARCA", seleccionado.Marcas.Id);
                 datos.SetearParametro("@IDTALLE", seleccionado.Talles.Id);
                 datos.SetearParametro("@IDTIPO", seleccionado.Tipo_Productos.Id);
+
+                datos.EjecutarAccion();
+                return 1;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public int BajaLogica(Productos seleccionado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE Productos SET Estado=1 WHERE Codigo=@Codigo");
+                datos.SetearParametro("@Codigo", seleccionado.Codigo);
 
                 datos.EjecutarAccion();
                 return 1;
