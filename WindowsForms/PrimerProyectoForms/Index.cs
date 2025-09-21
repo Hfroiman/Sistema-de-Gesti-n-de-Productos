@@ -17,6 +17,8 @@ namespace PrimerProyectoForms
         private List<Productos> listaProductos = new List<Productos>();
         private List<Colores> listaColores = new List<Colores>();
         private List<Talles> listaTalles = new List<Talles>();
+        private List<Marcas> listaMarcas = new List<Marcas>();
+        private List<Tipo_Productos> listaTipos = new List<Tipo_Productos>();
         public Index()
         {
             InitializeComponent();
@@ -26,7 +28,49 @@ namespace PrimerProyectoForms
         {
             try
             {
+                Cargar_CBX_Filtros();
+                CargarLista();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void CargarLista()
+        {
+            try
+            {
+                Negocios negocio = new Negocios();
+                listaProductos = negocio.Listar();
                 cargardgv();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void Cargar_CBX_Filtros()
+        {
+            try
+            {
+                int inicio = -1;
+                Negocios negocios = new Negocios();
+                listaMarcas = negocios.listaMarcas();
+                listaTipos = negocios.listaTipo_Productos();
+
+                cbxMarcas.DataSource = listaMarcas;
+                cbxMarcas.DisplayMember = "Nombre";
+                cbxMarcas.ValueMember = "Id";
+                cbxMarcas.SelectedIndex = inicio;
+
+                cbxtipos.DataSource = listaTipos;
+                cbxtipos.DisplayMember = "Nombre";
+                cbxtipos.ValueMember = "Id";
+                cbxtipos.SelectedIndex = inicio;
+
             }
             catch (Exception ex)
             {
@@ -38,12 +82,13 @@ namespace PrimerProyectoForms
         {
             try
             {
-                Negocios negocio = new Negocios();
-                listaProductos = negocio.Listar();
                 dgvProductos.DataSource = listaProductos;
                 OcultarColumnas();
-                CargarImagen(listaProductos[0].IMG);
-                CargarDetalle(listaProductos[0]);
+                if (listaProductos.Count > 0)
+                {
+                    CargarImagen(listaProductos[0].IMG);
+                    CargarDetalle(listaProductos[0]);
+                }
             }
             catch (Exception ex)
             {
@@ -60,7 +105,7 @@ namespace PrimerProyectoForms
                 lblCantidad.Text = "TOTAL DISPONIBLE: " + productos.Cantidad.ToString();
                 lblcolor.Text = "COLOR: " + productos.Colores.Nombre.ToString();
                 lbltalle.Text = "TALLE: " + productos.Talles.Nombre.ToString();
-                CargarCBX(productos.Cantidad);
+                CargarCBXCatidad(productos.Cantidad);
             }
             catch (Exception ex)
             {
@@ -68,7 +113,7 @@ namespace PrimerProyectoForms
             }
         }
 
-        private void CargarCBX(int cantidad)
+        private void CargarCBXCatidad(int cantidad)
         {
             cbxCantidad.Items.Clear();
             for (int i = 1; i <= cantidad; i++)
@@ -144,6 +189,7 @@ namespace PrimerProyectoForms
                     }
                 }
                 NuevoProducto ventana = new NuevoProducto();
+                ventana.FormClosed += (s, args) => CargarLista();
                 ventana.Show();
             }
             catch (Exception ex)
@@ -174,22 +220,35 @@ namespace PrimerProyectoForms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Productos seleccionado = new Productos();
-            seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
+            try
+            {
+                Productos seleccionado = new Productos();
+                seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
 
-            NuevoProducto modificar = new NuevoProducto(seleccionado);
-            modificar.FormClosed += (s, args) => cargardgv();
-            modificar.ShowDialog();
+                NuevoProducto modificar = new NuevoProducto(seleccionado);
+                modificar.FormClosed += (s, args) => CargarLista();
+                modificar.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Negocios neg = new Negocios();
-            Productos seleccionado = new Productos();
-            seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
-            if (Confirmar()) neg.BajaLogica(seleccionado);
-            cargardgv();
-
+            try
+            {
+                Negocios neg = new Negocios();
+                Productos seleccionado = new Productos();
+                seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
+                if (Confirmar()) neg.BajaLogica(seleccionado);
+                cargardgv();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         private bool Confirmar()
         {
@@ -201,6 +260,82 @@ namespace PrimerProyectoForms
             MessageBoxIcon.Question);
             if (confirmacion == DialogResult.Yes) return true;
             return false;
+        }
+        
+        private void cbxtipos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FiltrarProductos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void cbxMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FiltrarProductos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void FiltrarProductos()
+        {
+            try
+            {
+                Negocios neg = new Negocios();
+                Marcas marca = new Marcas();
+                Tipo_Productos tipo = new Tipo_Productos();
+
+                string nombre = txtbuscar.Text;
+                marca = (Marcas)cbxMarcas.SelectedItem;
+                tipo = (Tipo_Productos)cbxtipos.SelectedItem;
+
+                listaProductos = neg.Filtarbusqueda(marca, tipo, nombre);
+                cargardgv();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void brnBorrarfiltros_Click(object sender, EventArgs e)
+        {
+            Cargar_CBX_Filtros();
+            txtbuscar.Text = "";
+            CargarLista();
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FiltrarProductos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FiltrarProductos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

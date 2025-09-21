@@ -34,7 +34,7 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblcolor = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnAgregarNuevoProducto = new System.Windows.Forms.Button();
             this.btnIrAVentas = new System.Windows.Forms.Button();
@@ -42,14 +42,15 @@
             this.cbxCantidad = new System.Windows.Forms.ComboBox();
             this.btnIrCarrito = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbxMarcas = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cbxtipos = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.pbxImg = new System.Windows.Forms.PictureBox();
             this.lblStockTotal = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.brnBorrarfiltros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImg)).BeginInit();
             this.SuspendLayout();
@@ -114,14 +115,15 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button4
+            // btnBuscar
             // 
-            this.button4.Location = new System.Drawing.Point(322, 47);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "BUSCAR";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(325, 46);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(111, 23);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // button6
             // 
@@ -193,57 +195,55 @@
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(426, 427);
+            this.dgvProductos.Size = new System.Drawing.Size(429, 427);
             this.dgvProductos.TabIndex = 27;
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
-            // comboBox4
+            // cbxMarcas
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Marcas"});
-            this.comboBox4.Location = new System.Drawing.Point(130, 10);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(105, 21);
-            this.comboBox4.TabIndex = 28;
+            this.cbxMarcas.FormattingEnabled = true;
+            this.cbxMarcas.Location = new System.Drawing.Point(123, 10);
+            this.cbxMarcas.Name = "cbxMarcas";
+            this.cbxMarcas.Size = new System.Drawing.Size(74, 21);
+            this.cbxMarcas.TabIndex = 28;
+            this.cbxMarcas.SelectedIndexChanged += new System.EventHandler(this.cbxMarcas_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(10, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 17);
+            this.label4.Size = new System.Drawing.Size(107, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "Filtrar por: Marca";
             // 
-            // comboBox5
+            // cbxtipos
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Marcas"});
-            this.comboBox5.Location = new System.Drawing.Point(302, 10);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(105, 21);
-            this.comboBox5.TabIndex = 30;
+            this.cbxtipos.FormattingEnabled = true;
+            this.cbxtipos.Location = new System.Drawing.Point(245, 10);
+            this.cbxtipos.Name = "cbxtipos";
+            this.cbxtipos.Size = new System.Drawing.Size(60, 21);
+            this.cbxtipos.TabIndex = 30;
+            this.cbxtipos.SelectedIndexChanged += new System.EventHandler(this.cbxtipos_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 10);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(205, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.Size = new System.Drawing.Size(38, 16);
             this.label5.TabIndex = 31;
             this.label5.Text = "Tipo:";
             // 
-            // textBox1
+            // txtbuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 20);
-            this.textBox1.TabIndex = 32;
-            this.textBox1.Text = "Buscar...";
+            this.txtbuscar.Location = new System.Drawing.Point(7, 49);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(289, 20);
+            this.txtbuscar.TabIndex = 32;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // pbxImg
             // 
@@ -274,19 +274,31 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // brnBorrarfiltros
+            // 
+            this.brnBorrarfiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnBorrarfiltros.Location = new System.Drawing.Point(341, 7);
+            this.brnBorrarfiltros.Name = "brnBorrarfiltros";
+            this.brnBorrarfiltros.Size = new System.Drawing.Size(95, 23);
+            this.brnBorrarfiltros.TabIndex = 38;
+            this.brnBorrarfiltros.Text = "🗑️ FILTROS";
+            this.brnBorrarfiltros.UseVisualStyleBackColor = true;
+            this.brnBorrarfiltros.Click += new System.EventHandler(this.brnBorrarfiltros_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 557);
+            this.Controls.Add(this.brnBorrarfiltros);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lblStockTotal);
             this.Controls.Add(this.pbxImg);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.cbxtipos);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cbxMarcas);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnIrCarrito);
             this.Controls.Add(this.label19);
@@ -294,7 +306,7 @@
             this.Controls.Add(this.btnIrAVentas);
             this.Controls.Add(this.btnAgregarNuevoProducto);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblcolor);
             this.Controls.Add(this.lblCantidad);
@@ -322,7 +334,7 @@
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblcolor;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnAgregarNuevoProducto;
         private System.Windows.Forms.Button btnIrAVentas;
@@ -330,14 +342,15 @@
         private System.Windows.Forms.ComboBox cbxCantidad;
         private System.Windows.Forms.Button btnIrCarrito;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbxMarcas;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbxtipos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.PictureBox pbxImg;
         private System.Windows.Forms.Label lblStockTotal;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button brnBorrarfiltros;
     }
 }
 

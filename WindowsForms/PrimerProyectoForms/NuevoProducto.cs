@@ -95,7 +95,7 @@ namespace PrimerProyectoForms
             {
                 if (ConfirmarDatos())
                 {
-                    pr.Codigo = txtCodigo.Text;
+                    pr.Codigo = txtCodigo.Text +"-";
                     pr.Nombre = txtNombre.Text;
                     pr.IMG = txtIMG.Text;
                     pr.Precio = int.Parse(txtPrecio.Text);
@@ -244,7 +244,7 @@ namespace PrimerProyectoForms
         {
             try
             {
-                string IMG = "";
+                string IMG = txtIMG.Text;
                 if (producto != null) IMG = producto.IMG;
                 pbxImagen.Load(IMG);
             }

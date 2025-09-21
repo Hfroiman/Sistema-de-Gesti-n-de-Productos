@@ -4,3 +4,9 @@ C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Dominio\obj\Debug\Dom
 C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Dominio\obj\Debug\Dominio.dll
 C:\Users\hfroi\OneDrive\Documentos\PracticaC#\WindowsForms\Dominio\obj\Debug\Dominio.pdb
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\bin\Debug\Dominio.dll
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\bin\Debug\Dominio.pdb
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\obj\Debug\Dominio.dll
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\Dominio\obj\Debug\Dominio.pdb

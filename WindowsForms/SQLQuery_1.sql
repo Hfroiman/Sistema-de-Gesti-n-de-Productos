@@ -63,12 +63,6 @@ CREATE TABLE DetalleVenta (
     Precio DECIMAL(10,2) NOT NULL,
     CONSTRAINT FK_DetalleVenta_Ventas FOREIGN KEY (ID_Venta) REFERENCES Ventas(ID_Venta),
 );
-
-MODIFY TABLE Productos
-ADD Estado BIT NOT NULL
-
-UPDATE Productos SET Estado=0
-
 /*
 CREATE TRIGGER TR_Nuevo_Producto
 ON Productos
@@ -86,4 +80,28 @@ BEGIN
         IMG, Nombre, Id_Color, Id_Talle, Id_Marca, Id_Tipo, Cantidad, Precio 
     FROM inserted;
 
-END;*/
+END;
+
+CREATE VIEW Todos_Los_Articulos AS
+SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo WHERE pr.Estado=0*/
+
+
+SELECT * FROM Todos_Los_Articulos
+
+/*
+CREATE PROCEDURE SP_Busqueda_Filtrada(
+    @idmarca SMALLINT = NULL,
+    @Idtipo SMALLINT = NULL,
+    @nombre VARCHAR(15) = NULL
+)
+AS
+BEGIN
+    SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo WHERE 
+    pr.Estado=0 AND m.Id_Marca=@idmarca AND tp.Id_Tipo=@idtipo AND pr.Nombre LIKE '%'+ @nombre +'%'
+END
+*/
+
+
+SELECT * FROM MARCAS ORDER BY ID_Marca ASC
+EXEC SP_Busqueda_Filtrada 1,'',''
+

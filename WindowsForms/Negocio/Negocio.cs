@@ -17,7 +17,7 @@ namespace Negocio
             AccesoDatos acceso = new AccesoDatos();
             try
             {
-                acceso.SetearConsulta("SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo where pr.Estado=0");
+                acceso.SetearConsulta("SELECT * FROM Todos_Los_Articulos");
                 acceso.EjecutarLectura();
                 while (acceso.Lector.Read())
                 {
@@ -65,7 +65,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT Id_Color, Nombre from Colores");
+                datos.SetearConsulta("SELECT Id_Color, Nombre from Colores ORDER BY ID_Color ASC");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -94,7 +94,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT Id_Marca, Nombre from Marcas");
+                datos.SetearConsulta("SELECT Id_Marca, Nombre from Marcas ORDER BY ID_Marca ASC");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -123,7 +123,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT Id_Talle, Nombre from Talles");
+                datos.SetearConsulta("SELECT Id_Talle, Nombre from Talles ORDER BY ID_Talle ASC");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -152,7 +152,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT Id_Tipo, Nombre from Tipo_Producto");
+                datos.SetearConsulta("SELECT Id_Tipo, Nombre from Tipo_Producto ORDER BY ID_Tipo ASC");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -252,6 +252,63 @@ namespace Negocio
                 datos.EjecutarAccion();
                 return 1;
 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public List<Productos> Filtarbusqueda(Marcas marca=null, Tipo_Productos tipo=null, string nombre="")
+        {
+            List<Productos> lista = new List<Productos>();
+            AccesoDatos datos= new AccesoDatos();
+            string filtro1 = " AND m.Id_Marca = @idmarca";
+            string filtro2 = " AND tp.Id_Tipo = @idtipo";
+            string filtro3 = " AND pr.Nombre LIKE '%' + @nombre + '%'";
+            try
+            {
+                if (marca == null) filtro1 = "";
+                if (tipo == null) filtro2 = "";
+                if (nombre == "") filtro3 = "";
+
+                datos.SetearConsulta("SELECT pr.Codigo, IMG, pr.Nombre as Nombre, Cantidad, Precio, col.Nombre as Color, col.Id_Color as Id_Color, t.Nombre as Talle, t.Id_Talle, m.Nombre as Marca, m.Id_Marca, tp.Nombre as Categoria, tp.Id_Tipo FROM Productos pr INNER JOIN Colores col on pr.Id_Color=col.ID_Color INNER JOIN Talles t on pr.Id_Talle=t.ID_Talle INNER JOIN Marcas m on pr.Id_Marca= m.ID_Marca INNER JOIN Tipo_Producto tp on pr.Id_Tipo=tp.ID_Tipo WHERE pr.Estado=0" + filtro1 + filtro2 + filtro3);
+                if (marca!= null) datos.SetearParametro("@idmarca", marca.Id);
+                if (tipo != null) datos.SetearParametro("@idtipo", tipo.Id);
+                if (nombre != "") datos.SetearParametro("@nombre", nombre);
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Productos aux = new Productos();
+                    aux.Colores = new Colores();
+                    aux.Talles = new Talles();
+                    aux.Marcas = new Marcas();
+                    aux.Tipo_Productos = new Tipo_Productos();
+
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.IMG = (string)datos.Lector["IMG"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Cantidad = Convert.ToInt32(datos.Lector["Cantidad"]);
+                    aux.Precio = Convert.ToInt32(datos.Lector["Precio"]);
+
+                    aux.Colores.Nombre = (string)datos.Lector["Color"];
+                    aux.Colores.Id = Convert.ToInt32(datos.Lector["Id_Color"]);
+
+                    aux.Talles.Nombre = (string)datos.Lector["Talle"];
+                    aux.Talles.Id = Convert.ToInt32(datos.Lector["Id_Talle"]);
+
+                    aux.Marcas.Nombre = (string)datos.Lector["Marca"];
+                    aux.Marcas.Id = Convert.ToInt32(datos.Lector["Id_Marca"]);
+
+                    aux.Tipo_Productos.Nombre = (string)datos.Lector["Categoria"];
+                    aux.Tipo_Productos.Id = Convert.ToInt32(datos.Lector["Id_Tipo"]);
+
+                    lista.Add(aux);
+                }
+                return lista;
             }
             catch (Exception ex)
             {
