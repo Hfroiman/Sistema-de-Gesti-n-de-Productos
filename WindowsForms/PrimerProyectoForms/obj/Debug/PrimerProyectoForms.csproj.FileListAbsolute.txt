@@ -32,3 +32,4 @@ C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Prod
 C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerPr.9DFF5D22.Up2Date
 C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.exe
 C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.pdb
+C:\Users\hfroi\OneDrive\Documentos\Github\WINFORMS-C#\Sistema-de-Gesti-n-de-Productos\WindowsForms\PrimerProyectoForms\obj\Debug\PrimerProyectoForms.Carrito.resources

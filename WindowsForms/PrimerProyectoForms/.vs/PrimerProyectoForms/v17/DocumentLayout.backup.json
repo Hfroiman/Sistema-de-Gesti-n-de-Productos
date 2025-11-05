@@ -3,16 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|c:\\users\\hfroi\\onedrive\\documentos\\github\\winforms-c#\\sistema-de-gesti-n-de-productos\\windowsforms\\primerproyectoforms\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|c:\\users\\hfroi\\onedrive\\documentos\\github\\winforms-c#\\sistema-de-gesti-n-de-productos\\windowsforms\\primerproyectoforms\\nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:nuevoproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{27DBB363-280A-4D2E-A8B2-053F5EBB7980}|PrimerProyectoForms.csproj|solutionrelative:index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35941B26-F3C3-4BFF-8BBC-E08476454978}|..\\Dominio\\Dominio.csproj|c:\\users\\hfroi\\onedrive\\documentos\\github\\winforms-c#\\sistema-de-gesti-n-de-productos\\windowsforms\\dominio\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +21,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Index.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\Index.cs",
               "RelativeDocumentMoniker": "Index.cs",
@@ -39,28 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NuevoProducto.cs",
-              "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs",
-              "RelativeDocumentMoniker": "NuevoProducto.cs",
-              "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\NuevoProducto.cs",
-              "RelativeToolTip": "NuevoProducto.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAQwH8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T16:59:59.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cs",
               "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\Index.cs",
               "RelativeDocumentMoniker": "Index.cs",
               "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\PrimerProyectoForms\\Index.cs",
               "RelativeToolTip": "Index.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAIAywDcBAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAASwGoAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T14:45:16.109Z",
+              "WhenOpened": "2025-10-04T20:38:12.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Carrito.cs",
+              "DocumentMoniker": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\Dominio\\Carrito.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Carrito.cs",
+              "ToolTip": "C:\\Users\\hfroi\\OneDrive\\Documentos\\Github\\WINFORMS-C#\\Sistema-de-Gesti-n-de-Productos\\WindowsForms\\Dominio\\Carrito.cs",
+              "RelativeToolTip": "..\\Dominio\\Carrito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:59:53.919Z",
               "EditorCaption": ""
             }
           ]

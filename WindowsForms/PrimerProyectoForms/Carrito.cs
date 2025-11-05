@@ -12,7 +12,7 @@ namespace PrimerProyectoForms
 {
     public partial class Carrito : Form
     {
-        public Carrito()
+        public Carrito(List<Dominio.Productos> listaCarrito)
         {
             InitializeComponent();
         }

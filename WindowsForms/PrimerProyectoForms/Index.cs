@@ -105,21 +105,11 @@ namespace PrimerProyectoForms
                 lblCantidad.Text = "TOTAL DISPONIBLE: " + productos.Cantidad.ToString();
                 lblcolor.Text = "COLOR: " + productos.Colores.Nombre.ToString();
                 lbltalle.Text = "TALLE: " + productos.Talles.Nombre.ToString();
-                CargarCBXCatidad(productos.Cantidad);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
-
-        private void CargarCBXCatidad(int cantidad)
-        {
-            cbxCantidad.Items.Clear();
-            for (int i = 1; i <= cantidad; i++)
-            {
-                cbxCantidad.Items.Add(i);
-            } 
         }
 
         private void OcultarColumnas()
@@ -133,16 +123,10 @@ namespace PrimerProyectoForms
         private void btnIrCarrito_Click(object sender, EventArgs e)
         {
             try
-            {
-                foreach (var item in Application.OpenForms)
-                {
-                    if (item.GetType() == typeof(Carrito))
-                    {
-                        return;
-                    }
-                }
-                Carrito ventana = new Carrito();
-                ventana.Show();
+            {/*
+                Carrito carrito = new Carrito(listaCarrito);
+                carrito.FormClosed += (s, args) => CargarLista();
+                carrito.ShowDialog();*/
             }
             catch (Exception ex)
             {
@@ -326,16 +310,38 @@ namespace PrimerProyectoForms
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnCargarCarrito_Click(object sender, EventArgs e)
         {
+            Productos seleccionado = new Productos();
             try
-            {
-                FiltrarProductos();
+            {/*
+                if(cbxCantidad.SelectedItem != null)
+                {
+                    int cantSeleccionada = (int)cbxCantidad.SelectedItem;
+                    seleccionado = (Productos)dgvProductos.CurrentRow.DataBoundItem;
+                    seleccionado.Cantidad = cantSeleccionada;
+                    Carrito.listacarrito(seleccionado);
+                    //listaCarrito.Add(seleccionado);
+
+                }
+                else SeleccionarCant();*/
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private bool SeleccionarCant()
+        {
+            string msj = "Debe seleccionar la cantidad de productos a cargar en el carrito.";
+            DialogResult confirmacion = MessageBox.Show(
+            msj,
+            "Confirmar",
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Question);
+            if (confirmacion == DialogResult.Yes) return true;
+            return false;
         }
     }
 }
